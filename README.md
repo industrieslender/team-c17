@@ -1,138 +1,272 @@
-# SmartTax AI — Web App
+# 🎥 Content Machines — Shorts Automation Platform  
+*TikTok • Instagram Reels • YouTube Shorts*
 
-> ⚠️ Important Legal Notice: This README and Privacy Policy are templates only and do not constitute legal advice. You should have a licensed attorney review all policies before launching publicly.
-
----
-
-## 📘 README.md
-
-### Overview
-SmartTax AI is a web-based AI tax assistant that helps users organize tax-related information, receive general educational tax-saving insights, and automatically fill out tax documents based on the information they provide.
-
-SmartTax AI does not file tax returns, does not submit documents to the IRS or any government authority, and does not act as a tax preparer. The app only prepares documents for users to review, download, and file themselves.
+A focused creator platform that turns ideas or long-form content into short-form videos and **automatically posts them at scheduled times**.
 
 ---
 
-### 🎯 Purpose
-SmartTax AI exists to:
-- Simplify tax information collection  
-- Provide general educational guidance about taxes  
-- Identify potential deductions and credits  
-- Generate filled-out tax forms for review  
-- Help users understand their tax situation  
+# 🎯 Product Goal
+
+Build a creator operating system that:
+
+- Generates TikToks, Reels, and Shorts  
+- Writes viral hooks, scripts, captions, and hashtags  
+- Produces video assets (subtitles, thumbnails, voiceovers)  
+- Schedules and auto-posts content  
+- Learns from performance and improves future outputs  
+
+Monetization: **Creator subscriptions**
 
 ---
 
-### ✨ Core Features
-- Guided step-by-step data entry  
-- General AI-generated tax-saving insights  
-- Automatic document and form completion  
-- Downloadable tax packets  
-- Plain-language explanations  
-- No automatic submissions to any authority  
+# 🧱 High-Level Architecture
+
+Web App (Dashboard)
+↓
+API Gateway (Auth, rate limits)
+↓
+Core Backend
+├── User & billing service
+├── Shorts workflow engine
+├── Scheduler & posting service
+├── Media processing service
+└── Analytics service
+↓
+AI Layer
+├── Hook + script generator
+├── Subtitle & caption engine
+├── Trend & optimization engine
+└── Thumbnail generator
+↓
+Infrastructure
+├── PostgreSQL
+├── Object storage (videos/assets)
+├── Queue system
+└── CDN
+
 
 ---
 
-### 🚫 What This App Does NOT Do
-- Does not file taxes  
-- Does not submit forms to the IRS or any government agency  
-- Does not guarantee accuracy, compliance, refunds, or outcomes  
-- Does not replace licensed tax professionals  
-- Does not provide legal, financial, or tax advice  
+# 🎨 Frontend Stack
+
+- **Framework:** Next.js (TypeScript)  
+- **UI:** Tailwind CSS + shadcn/ui  
+- **State:** React Query + Zustand  
+- **Editor:** Tiptap  
+
+### Core Screens
+- Content dashboard  
+- Shorts generator workspace  
+- Video preview & subtitle editor  
+- Scheduler calendar  
+- Asset library  
+- Performance analytics  
 
 ---
 
-### 👤 User Responsibility
-By using SmartTax AI, users agree that:
-- They are solely responsible for all information entered  
-- They must review all generated documents before use  
-- They are responsible for verifying accuracy and compliance  
-- They should consult a certified tax professional before filing  
-- They use the app entirely at their own risk  
+# ⚙️ Backend Stack
+
+- **Runtime:** Node.js  
+- **Framework:** NestJS or Fastify  
+- **API:** REST + Webhooks  
+- **Auth:** Clerk / Supabase Auth  
+- **Payments:** Stripe  
+
+### Services
+
+- User & subscription service  
+- Content machine engine  
+- Media processing pipeline  
+- Auto-posting scheduler  
+- Platform integration service  
 
 ---
 
-### 🔐 Privacy-First Design
-- Data is used only to operate the app and generate documents  
-- No automatic third-party or government sharing  
-- No IRS or government system integrations  
+# 🧠 AI Layer (Short-Form Focused)
+
+## 1. Hook & Script Engine
+- Scroll-stopping hooks  
+- 7s / 15s / 30s scripts  
+- Open loops + CTAs  
+- Retention rewrites  
+
+## 2. Shorts Generator
+- Break long-form into clips  
+- Detect viral moments  
+- Rewrite for TikTok/Reels tone  
+- Generate multiple variations  
+
+## 3. Subtitle & Caption Engine
+- Burned-in subtitles  
+- Emoji-optimized captions  
+- Hashtag clusters  
+- Keyword & trend injection  
+
+## 4. Thumbnail / Cover Engine
+- Short-form covers  
+- Emotion & face prompts  
+- Text layout variants  
+- A/B testing assets  
+
+## 5. Optimization Layer
+- Hook scoring  
+- Length optimization  
+- Creator style profiles  
+- Performance feedback loop  
 
 ---
 
-# 🔒 Privacy Policy
+# 🎞 Media & Video Pipeline
 
-**Last Updated:** [Insert Date]
+- Transcription engine  
+- Highlight detection  
+- Auto scene cutting  
+- Subtitle rendering  
+- 9:16 formatter  
+- Platform export presets  
 
-This Privacy Policy explains how SmartTax AI ("we", "our", or "the app") collects, uses, and protects information.
-
----
-
-### 1. Information We Collect
-We may collect:
-- Personal details you submit (name, email, account info)  
-- Tax-related and financial information you enter  
-- Uploaded documents  
-- Technical data (IP address, browser type, device info, cookies)  
+All assets stored in object storage and served via CDN.
 
 ---
 
-### 2. How We Use Information
-We use information to:
-- Generate documents and summaries  
-- Provide general educational insights  
-- Maintain functionality and security  
-- Improve performance and user experience  
+# ⏰ Auto-Posting & Scheduling System
 
-We do not sell personal data.
+### Scheduler Flow
 
----
+### Features
 
-### 3. No IRS or Government Submission
-SmartTax AI does not transmit data to the IRS or any government entity. All documents remain under user control.
+- Time-zone aware scheduling  
+- Bulk scheduling  
+- Content queues  
+- Best-time recommendations  
+- Failure retries & alerts  
 
----
+### Platform Integrations
 
-### 4. Data Storage and Security
-We apply reasonable technical and organizational measures to protect data. However, no digital system is completely secure, and we cannot guarantee absolute security.
+- TikTok Publishing API  
+- Instagram Graph API (Reels)  
+- YouTube Data API (Shorts)  
 
----
-
-### 5. User Responsibility
-Users are solely responsible for:
-- Data accuracy  
-- Reviewing generated documents  
-- Compliance with all laws and regulations  
-- Any decisions or actions taken based on app output  
+OAuth tokens stored encrypted.
 
 ---
 
-### 6. No Professional Relationship
-Use of SmartTax AI does not create an accountant-client, attorney-client, fiduciary, or professional services relationship.
+# 🗃 Data Layer
+
+### PostgreSQL
+
+- Users  
+- Creator profiles  
+- Connected accounts  
+- Shorts projects  
+- Generated assets  
+- Scheduled posts  
+- Performance metrics  
+
+### Storage
+
+- Cloudflare R2 / S3  
+- Videos  
+- Audio  
+- Thumbnails  
+- Subtitle files  
+
+### Queue & Cache
+
+- Redis + BullMQ  
+- AI jobs  
+- Video jobs  
+- Posting jobs  
 
 ---
 
-### 7. Limitation of Liability
-To the maximum extent permitted by law:
-- SmartTax AI and its owners, developers, and affiliates shall not be liable for any direct, indirect, incidental, consequential, special, or punitive damages  
-- This includes but is not limited to penalties, lost income, audits, incorrect filings, or data loss  
-- All use of the app is at the user’s sole risk  
+# 📈 Analytics System
+
+- Views  
+- Watch time  
+- Hook retention  
+- Saves & shares  
+- Post success rate  
+
+Used for:
+- Auto-optimization  
+- Hook improvement  
+- Best-time prediction  
 
 ---
 
-### 8. No Warranties
-The app is provided "AS IS" and "AS AVAILABLE" without warranties of any kind, express or implied, including but not limited to accuracy, reliability, merchantability, or fitness for a particular purpose.
+# 💰 Monetization
+
+### Free
+- Limited generations  
+- Manual export only  
+
+### Creator
+- Unlimited shorts  
+- Scheduler  
+- Auto-posting  
+
+### Pro
+- Multi-account  
+- Trend engine  
+- A/B testing  
+- Optimization engine  
+
+### Agency
+- Team workspaces  
+- Client accounts  
+- White-label exports  
 
 ---
 
-### 9. Indemnification
-Users agree to defend, indemnify, and hold harmless SmartTax AI and its operators from any claims, damages, liabilities, losses, or expenses arising from their use of the app or violation of any law.
+# 🛣 Build Roadmap
+
+## Phase 1 — MVP (2–4 weeks)
+- Shorts idea generator  
+- Hook + script engine  
+- Subtitle generator  
+- Manual export  
+- Stripe subscriptions  
+
+## Phase 2 — Automation (4–6 weeks)
+- Video pipeline  
+- Scheduler  
+- TikTok + Reels posting  
+- Asset library  
+
+## Phase 3 — Growth Engine
+- Trend detection  
+- Performance analytics  
+- Auto-optimization  
+- Team features  
 
 ---
 
-### 10. Policy Updates
-We may update this policy at any time. Continued use of the app indicates acceptance of the updated policy.
+# 🧠 Core Differentiator
+
+Not a content generator.
+
+A **short-form content operating system**:
+
+Idea → Shorts → Assets → Scheduled → Posted → Analyzed → Improved → Reposted
 
 ---
 
-### 11. Contact
-For privacy questions, contact: [Insert Contact Email]
+# 🧩 Optional Expansions
+
+- AI face-cam generator  
+- AI avatar presenters  
+- Viral format library  
+- Creator marketplace  
+- Auto brand kits  
+
+---
+
+# 📌 Vision
+
+If built correctly, this evolves into full creator infrastructure:
+
+The backend for the short-form creator economy.
+
+
+
